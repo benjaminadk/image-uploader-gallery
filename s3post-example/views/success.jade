@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    
+    a(href="/") Uploader
+    
+    h1 Thumbnail Gallery
+    
+    div#gallery
+        each image in images
+            div.image
+             a(href="/success/#{image.slice(47)}")
+                img(src="#{image}").thumbnail
+      
+    div#list 
+        h1 List of Paths
+        each image in images
+            p #{image}
+    
+            
