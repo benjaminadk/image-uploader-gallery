@@ -6,7 +6,7 @@ var s3Config = epa.get("s3");
 
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://test:test@ds011810.mlab.com:11810/benjaminadk", {useMongoClient: true});
+mongoose.connect(`mongodb://${s3Config.mlabUser}:${s3Config.mlabPassword}@ds011810.mlab.com:11810/benjaminadk`, {useMongoClient: true});
 var Schema = mongoose.Schema;
 var imageSchema = new Schema({
   url: {
