@@ -4,6 +4,10 @@ html
     title= title
     link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://use.fontawesome.com/e5ddde80f9.js")
     meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
   body
-    block content
+    header
+      include _navigation
+    main
+      block content

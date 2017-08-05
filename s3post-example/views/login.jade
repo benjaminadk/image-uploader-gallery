@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://use.fontawesome.com/e5ddde80f9.js")
+    meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+  body
+    include _navigation
+    #login-wrapper
+        h1 Login 
+        form#login(action='/login', method='POST')
+            label Email
+                input#email-login(type='email', placeholder='Enter Email', name='email')
+            label Password
+                input#password-login(type='password', placeholder='Enter Password', name='password')
+            input#submit-login.button.expanded(type='submit', value='submit') 
+    div#error-login
+        if error
+            span.callout.alert= error
+        
+  
+
+

@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://use.fontawesome.com/e5ddde80f9.js")
+    meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+  body
+    include _navigation
+    #signup-wrapper
+        h1 Signup 
+        form#signup(action='/signup', method='POST')
+            div.grid-x.grid-margin-x
+                div.cell.small-6
+                    label(for='firstName') First Name
+                        input#firstName-signup(type='text', placeholder='enter first name', name='firstName')
+                    label Last Name
+                        input#lastName-signup(type='text', placeholder='enter last name', name='lastName')
+                div.cell.small-6
+                    label Email
+                        input#email-signup(type='email', placeholder='enter email', name='email')
+                    label Password
+                        input#password-signup(type='password', placeholder='enter password', name='password')
+                input#submit-signup.button.expanded(type='submit', value='submit') 
+        
+    if error
+        if error.length<2
+            div#error.callout.alert= error
+        else
+        div#errors
+            each err in error  
+                span.callout.alert= err

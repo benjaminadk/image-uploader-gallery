@@ -1,0 +1,16 @@
+.title-bar
+    .title-bar-left 
+        a(href='/').nav-link
+            i.fa.fa-home.fa-2x
+        a(href='/uploader').nav-link
+            i.fa.fa-cloud-upload.fa-2x
+        a(href='/gallery').nav-link
+            i.fa.fa-camera-retro.fa-2x
+    .title-bar-right
+        if (iam.loggedIn)
+            a(href='/logout').nav-link LOGOUT 
+            i.fa.fa-user &nbsp;
+            b#user= iam.user.fullName
+        else
+            a(href='/login').nav-link LOGIN
+            a(href='/signup').nav-link SIGNUP

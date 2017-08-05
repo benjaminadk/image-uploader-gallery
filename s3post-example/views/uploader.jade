@@ -1,0 +1,41 @@
+extends layout
+
+block content
+      
+  h1 S3 Image Uploader
+  
+  form#s3form(action="https://#{bucketName}.s3.amazonaws.com/", method="POST", enctype="multipart/form-data")
+    input(type="hidden", name="key", value="")
+    input(type="hidden", name="acl", value="public-read")
+    //input(type="hidden", name="success_action_redirect", value="https://playingaround-benjaminadk.c9users.io/success")
+    input(type="hidden", name="Content-Type", value="image/png")
+    input(type="hidden", name="X-Amz-Credential", value="")
+    input(type="hidden", name="X-Amz-Algorithm", value="AWS4-HMAC-SHA256")
+    input(type="hidden", name="X-Amz-Date", value="")
+    input(type="hidden", name="Policy", value="")
+    input(type="hidden", name="X-Amz-Signature", value="")
+    
+    p
+      b Pick A File:
+      input#s3file(name="file", type="file")
+      
+    p
+      button#upload-file.button Upload
+      
+  .progress-container
+    .progress-bar
+      label
+      
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  script(src="/javascripts/jquery.form.js")
+  script(src="/javascripts/upload.js")
+  script.
+   $(function(){
+    Uploader.start({
+      s3file: "#s3file",
+      upload: "#upload-file",
+      form: "#s3form",
+      progressBar: ".progress-bar",
+      progressLabel: ".progress-bar label"
+    })
+    })

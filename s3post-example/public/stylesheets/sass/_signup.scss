@@ -1,0 +1,18 @@
+#signup-wrapper {
+    position: relative;
+    left: 25%;
+    margin-top: 10vh;
+    #signup {
+        width: 50vw;
+        height: 50vh;
+    }
+}
+
+#errors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .callout {
+        margin: 0 1vw;
+    }
+}

@@ -1,0 +1,20 @@
+@import 'sass/_variables';
+@import 'sass/_navigation';
+@import 'sass/_login';
+@import 'sass/_signup';
+@import 'sass/_uploader';
+@import 'sass/_gallery';
+@import 'sass/_fullImage';
+
+main {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.button {
+  background: #000;
+  color: #FFF;
+}
+
+
+

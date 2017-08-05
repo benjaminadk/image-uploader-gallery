@@ -1,0 +1,10 @@
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnail{
+  height: 20vh;
+  width: 20vh;
+  margin-left: 1vw;
+}
