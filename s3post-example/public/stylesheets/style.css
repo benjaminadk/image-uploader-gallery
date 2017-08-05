@@ -68,6 +68,9 @@ a:hover {
 .fullImage {
   height: 80vh; }
 
+#profile-pic {
+  width: 50vw; }
+
 main {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }

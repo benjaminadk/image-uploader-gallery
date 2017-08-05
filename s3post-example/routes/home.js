@@ -6,23 +6,30 @@ var s3Config = epa.get("s3");
 
 //setup for mongoose
 var mongoose = require("mongoose");
-var Image = require("../models/image");
+//var Image = require("../models/image");
 var User = require("../models/user");
 
 //setup router and define functions below
 var router = express.Router();
+
+router.get('/settings', settings);
+
 router.get('/', home);
 
 router.get('/uploader', uploader);
 
 router.get('/gallery', gallery);
-router.get('/gallery/:path', getImage);
+router.get('/gallery/:email/:path', getImage);
 
 router.post("/api/s3creds", getCredentials);
 
 router.get('/logout', userLogout);
 
-
+function settings(req, res, next){
+    var images = req.user.images;
+    
+    res.render("settings", {images: images});
+}
 
 function home(req, res, next){
    
@@ -37,26 +44,27 @@ function uploader(req, res, next){
 
 function gallery(req, res, next){
   var imageUrls=[];
- 
-  var test = Image.find({}, function(err,docs){
-    if(err){throw err}
-   docs.forEach(function(el){
-    imageUrls.push(el.url)
-  })
-    
+  var images = req.user.images;
+  images.forEach(function(el){
+      imageUrls.push(el.url.replace('@','%40'));
+  });
+    console.log(imageUrls);
     res.render("gallery",{images: imageUrls});
-  })
     
 }
 
 function getImage(req, res, next){
-  var imagePath = req.params.path;
+  var path = req.params.path;
+  var email = req.params.email;
   
-  res.render("fullImage",{image: imagePath});
+
+  
+  res.render("fullImage",{path: path, email: email});
 }
 
 function getCredentials(req, res, next){
     console.log(req.user);
+    var userEmail = req.user.email;
     var filename = req.body.filename
     var expires = moment().add(120, "minutes").toISOString();
     var contentType = "image/"
@@ -71,21 +79,24 @@ function getCredentials(req, res, next){
     expiration: expires,
     conditions: [
       //{"key": `images/${filename}`},
-      {"key": filename},
+      {"key": `${userEmail}/${filename}`},
       {"acl": "public-read"},
       //{"success_action_redirect": s3Config.returnUrl},
       {"Content-Type": contentType}
     ]
   }
     }
-    var imagePath = `https://s3-us-west-1.amazonaws.com/benjaminadk/${filename}`;
-    Image.findOne({url: imagePath}, function(err,image){
+    var imagePath = `https://s3-us-west-1.amazonaws.com/benjaminadk/${userEmail}/${filename}`;
+    var query = {
+        email: userEmail
+    }
+    User.findOne(query, function(err,user){
       if(err){return next(err)}
       
-      if(!image){
-        image = new Image({url: imagePath});
+      if(user){
+        user.images.push({url: imagePath})
       }
-      image.save(function(err){
+      user.save(function(err){
       if(err){throw err}
       console.log("image url saved to db")
     })

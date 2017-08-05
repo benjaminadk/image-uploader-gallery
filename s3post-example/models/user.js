@@ -2,6 +2,13 @@ var mongoose = require("mongoose");
 var bcrypt = require("bcrypt");
 var SALT_WORK_FACTOR = 10;
 
+var imageSchema = new mongoose.Schema({
+  url: {
+    type: String,
+    unique: true
+  }
+});
+
 var User;
 var UserSchema = new mongoose.Schema({
   email: {
@@ -21,7 +28,7 @@ var UserSchema = new mongoose.Schema({
       type: String,
       required: true
   },
-  images: [{type: String}]
+  images: [imageSchema]
 });
 
 //validation

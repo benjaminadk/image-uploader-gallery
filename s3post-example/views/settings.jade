@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 Settings
+    if images
+        label(for='profile-pic') Set a Profile Pic
+        select#profile-pic(name='profile-pic')
+            each image in images
+                option(value= image.url)= image.url.slice(47)
+    br
+    button#set-profile-pic.button Set Profile Pic
+    
+    script.
+        var pic = document.getElementById('profile-pic')
+        var picButton = document.getElementById('set-profile-pic');
+        picButton.addEventListener('click', function(){
+           console.log(pic.value); 
+        });
