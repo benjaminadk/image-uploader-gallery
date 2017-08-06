@@ -11,3 +11,10 @@ html
       include _navigation
     main
       block content
+      
+    script.
+      var pic = JSON.parse(localStorage.getItem("Uploader"));
+      
+            var url = pic.profilePic;
+            var target = document.getElementById('nav-profile-pic');
+            target.setAttribute('src',url);

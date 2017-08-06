@@ -27,8 +27,8 @@ router.get('/logout', userLogout);
 
 function settings(req, res, next){
     var images = req.user.images;
-    
-    res.render("settings", {images: images});
+    var email = req.user.email;
+    res.render("settings", {images: images, email: email});
 }
 
 function home(req, res, next){
@@ -108,7 +108,7 @@ function getCredentials(req, res, next){
 
 function userLogout(req, res, next){
   req.destroyUserSession();
-  res.redirect('/');
+  res.redirect('/login');
 }
 
 module.exports = router;

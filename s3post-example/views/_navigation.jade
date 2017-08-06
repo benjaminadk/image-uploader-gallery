@@ -10,9 +10,10 @@
             i.fa.fa-camera-retro.fa-2x
     .title-bar-right
         if (iam.loggedIn)
-            a(href='/logout').nav-link LOGOUT 
             i.fa.fa-user &nbsp;
             b#user= iam.user.fullName
+            img#nav-profile-pic(src='')
+            a(href='/logout').nav-link LOGOUT
         else
             a(href='/login').nav-link LOGIN
             a(href='/signup').nav-link SIGNUP

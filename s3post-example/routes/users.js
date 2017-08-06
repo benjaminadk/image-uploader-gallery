@@ -19,6 +19,7 @@ function userSignup(req, res, next){
   var email = req.body.email;
   var password = req.body.password;
   var images = [];
+  var profilePic = '';
   
   function save(user){
     user.save(function(err){
@@ -36,6 +37,7 @@ function userSignup(req, res, next){
         password: password,
         firstName: firstName,
         lastName: lastName,
+        profilePic: profilePic,
         images: images
       });
       

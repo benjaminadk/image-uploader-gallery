@@ -10,9 +10,26 @@ block content
     br
     button#set-profile-pic.button Set Profile Pic
     
+   
     script.
-        var pic = document.getElementById('profile-pic')
+        var picSelect = document.getElementById('profile-pic');
         var picButton = document.getElementById('set-profile-pic');
+        var email = email;
+        console.log(email)
+        function setProfilePic(){
+            var pic = JSON.parse(localStorage.getItem("Uploader"));
+            var url = pic.profilePic;
+            var target = document.getElementById('nav-profile-pic');
+            target.setAttribute('src',url);
+            console.log(pic);
+        }
         picButton.addEventListener('click', function(){
-           console.log(pic.value); 
-        });
+            var picUrl = picSelect.value;
+            var obj = {"profilePic": picUrl};
+            var obj2 = JSON.stringify(obj);
+            console.log(picUrl);
+            localStorage.setItem("Uploader",[obj2]);
+            setProfilePic();
+        })
+      
+      
