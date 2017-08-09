@@ -4,21 +4,23 @@ block content
     if data
         div#meta-results-wrapper
             h2 As Promised, Your Meta Tags!
-            pre <span class="blue">&lt;meta</span> <span class="beige">charset</span>=<span class="green">"utf-8"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"viewport content"</span> <span class="beige">content</span>=<span class="green">"width=device-width, initial-scale=1"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;title&gt;</span><span class="green">"#{data[0]}"</span><span class="blue">&lt;/title&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"author"</span> <span class="beige">content</span>=<span class="green">"#{data[5]}"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"description"</span> <span class="beige">content</span>=<span class="green">"#{data[2]}"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:url"</span> <span class="beige">content</span>=<span class="green">"#{data[1]}"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:type"</span> <span class="beige">content</span>=<span class="green">"website"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:title"</span> <span class="beige">content</span>=<span class="green">"#{data[0]}"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:description"</span> <span class="beige">content</span>=<span class="green">"#{data[2]}"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:image"</span> <span class="beige">content</span>=<span class="green">"#{data[4]}"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:card"</span> <span class="beige">content</span>=<span class="green">"summary_large_image"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:creator"</span> <span class="beige">content</span>=<span class="green">"#{data[3]}"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:title"</span> <span class="beige">content</span>=<span class="green">"#{data[0]}"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:description"</span> <span class="beige">content</span>=<span class="green">"#{data[2]}"</span> <span class="blue">/&gt;</span><br/>
-            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:image"</span> <span class="beige">content</span>=<span class="green">"#{data[4]}"</span> <span class="blue">/&gt;</span><br/>
+            button#meta-copy.button Copy
+            div#meta-results
+                pre <span class="blue">&lt;meta</span> <span class="beige">charset</span>=<span class="green">"utf-8"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"viewport content"</span> <span class="beige">content</span>=<span class="green">"width=device-width, initial-scale=1"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;title&gt;</span><span class="green">"#{data[0]}"</span><span class="blue">&lt;/title&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"author"</span> <span class="beige">content</span>=<span class="green">"#{data[5]}"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"description"</span> <span class="beige">content</span>=<span class="green">"#{data[2]}"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:url"</span> <span class="beige">content</span>=<span class="green">"#{data[1]}"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:type"</span> <span class="beige">content</span>=<span class="green">"website"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:title"</span> <span class="beige">content</span>=<span class="green">"#{data[0]}"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:description"</span> <span class="beige">content</span>=<span class="green">"#{data[2]}"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:image"</span> <span class="beige">content</span>=<span class="green">"#{data[4]}"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:card"</span> <span class="beige">content</span>=<span class="green">"summary_large_image"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:creator"</span> <span class="beige">content</span>=<span class="green">"#{data[3]}"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:title"</span> <span class="beige">content</span>=<span class="green">"#{data[0]}"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:description"</span> <span class="beige">content</span>=<span class="green">"#{data[2]}"</span> <span class="blue">/&gt;</span><br/>
+                pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:image"</span> <span class="beige">content</span>=<span class="green">"#{data[4]}"</span> <span class="blue">/&gt;</span><br/>
     div#metatag-wrapper
         h1 Metatag Generator
         h4 What does this Service Do?
@@ -38,7 +40,8 @@ block content
                     i.fa.fa-facebook-official.fa-2x
                     span &nbsp; Best Practices for Facebook Meta Content
                 div#tab-1.accordion-content(data-tab-content)
-                    h4 Straight From <a href='#' target='_blank'>Facebook Developers</a>
+                    h4 Straight From <a href='https://developers.facebook.com/docs/sharing/webmasters' target='_blank'>Facebook Developers Website</a>
+                    h4 Test Meta Content without posting using this <a href='https://developers.facebook.com/tools/debug/' target='_blank'>Facebook Testing Tool</a>
                     dl
                         dt Title
                         dd A clear title without branding or mentioning the domain itself.
@@ -55,7 +58,8 @@ block content
                     i.fa.fa-twitter-square.fa-2x
                     span &nbsp; Best Practices for Twitter Meta Content
                 div#tab-2.accordion-content(data-tab-content)
-                    h4 Straight From Twitter Developers
+                    h4 Straight From <a href='https://dev.twitter.com/cards/overview' target='_blank'>Twitter Developers Website</a>
+                    h4 Test Meta Content without posting using this <a href='https://cards-dev.twitter.com/validator' target='_blank'>Twitter Testing Tool</a>
                     dl
                         dt Type
                         dd As mentioned above, we will be creating a Summary Card with Large Image.  There are more types, visit above link for more information.
@@ -87,4 +91,18 @@ block content
     script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js")
     script.
         $(document).foundation();
+        var $copyButton = $('#meta-copy');
+        
+        function copyToClipboard(){
+        var $results = $('#meta-results');
+       
+        console.log($results[0].innerText)
+        
+        var $temp = $('<input>');
+        $('body').append($temp);
+        $temp.val($results[0].innerText).select();
+        document.execCommand("copy");
+        $temp.remove();
+        }
+        $copyButton.click(copyToClipboard)
     

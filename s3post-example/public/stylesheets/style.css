@@ -90,9 +90,19 @@ a:hover {
 #meta-results-wrapper .beige {
   color: #b7b045; }
 
-#metatag-wrapper .accordion-title {
-  background: #000;
-  color: #white; }
+#metatag-wrapper .accordion-item .accordion-title {
+  background: #000; }
+
+#metatag-wrapper .accordion-item a {
+  color: #f7f7f7; }
+  #metatag-wrapper .accordion-item a:hover {
+    color: #4bc7fc; }
+
+#metatag-wrapper .accordion-item .accordion-content a {
+  color: #4bc7fc; }
+  #metatag-wrapper .accordion-item .accordion-content a:hover {
+    color: #049cdd;
+    text-decoration: underline; }
 
 main {
   padding: 50px;
@@ -104,3 +114,6 @@ main {
 .button {
   background: #000;
   color: #FFF; }
+  .button:hover {
+    background: #4bc7fc;
+    color: #000; }

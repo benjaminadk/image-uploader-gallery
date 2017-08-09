@@ -15,9 +15,25 @@
     }
 }
 #metatag-wrapper {
-    .accordion-title {
-        background: $black;
-        color: #white;
+    .accordion-item{
+        .accordion-title {
+            background: $black;
+        }
+        a {
+            color: $white;
+            &:hover{
+                color: $lightblue;
+            }
+        }
+        .accordion-content {
+            a {
+                color: $lightblue;
+                &:hover {
+                    color: darken($lightblue, 20%);
+                    text-decoration: underline;
+                }
+            }
+        }
     }
   
 }
