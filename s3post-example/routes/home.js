@@ -4,10 +4,12 @@ var moment = require("moment");
 var epa = require("epa").getEnvironment();
 var s3Config = epa.get("s3");
 
-//setup for mongoose
+//setup for Mongoose
 var mongoose = require("mongoose");
 //var Image = require("../models/image");
 var User = require("../models/user");
+
+//setup Keen
 
 //setup router and define functions below
 var router = express.Router();
@@ -18,10 +20,13 @@ router.get('/', home);
 
 router.get('/uploader', uploader);
 
+router.get('/metatag', metatag)
+
 router.get('/gallery', gallery);
 router.get('/gallery/:email/:path', getImage);
 
 router.post("/api/s3creds", getCredentials);
+router.post("/api/metatags", createTags);
 
 router.get('/logout', userLogout);
 
@@ -32,7 +37,7 @@ function settings(req, res, next){
 }
 
 function home(req, res, next){
-   
+    
     res.render("index");    
 }
 
@@ -40,6 +45,11 @@ function uploader(req, res, next){
   res.render("uploader", {
         bucketName: s3Config.bucketName
     });    
+}
+
+function metatag(req, res, next){
+  var images = req.user.images;
+  res.render('metatag',{images: images});
 }
 
 function gallery(req, res, next){
@@ -104,6 +114,20 @@ function getCredentials(req, res, next){
     })
     var Policy = s3Policy(s3PolicyConfig)
     res.status(200).json(Policy)
+}
+
+function createTags(req, res, next){
+  var a = req.body;
+  var title = a['meta-title'];
+  var url = a['meta-url'];
+  var description = a['meta-description'];
+  var handle = a['meta-twitter-handle'];
+  var image = a['meta-pic'];
+  var author = req.user.fullName;
+  var payload = [title, url, description, handle, image, author];
+  
+  res.render('metatag', {data: payload})
+  
 }
 
 function userLogout(req, res, next){

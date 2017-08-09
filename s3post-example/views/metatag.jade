@@ -1,0 +1,90 @@
+extends layout
+
+block content
+    if data
+        div#meta-results-wrapper
+            h2 As Promised, Your Meta Tags!
+            pre <span class="blue">&lt;meta</span> <span class="beige">charset</span>=<span class="green">"utf-8"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"viewport content"</span> <span class="beige">content</span>=<span class="green">"width=device-width, initial-scale=1"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;title&gt;</span><span class="green">"#{data[0]}"</span><span class="blue">&lt;/title&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"author"</span> <span class="beige">content</span>=<span class="green">"#{data[5]}"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"description"</span> <span class="beige">content</span>=<span class="green">"#{data[2]}"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:url"</span> <span class="beige">content</span>=<span class="green">"#{data[1]}"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:type"</span> <span class="beige">content</span>=<span class="green">"website"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:title"</span> <span class="beige">content</span>=<span class="green">"#{data[0]}"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:description"</span> <span class="beige">content</span>=<span class="green">"#{data[2]}"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">property</span>=<span class="green">"og:image"</span> <span class="beige">content</span>=<span class="green">"#{data[4]}"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:card"</span> <span class="beige">content</span>=<span class="green">"summary_large_image"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:creator"</span> <span class="beige">content</span>=<span class="green">"#{data[3]}"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:title"</span> <span class="beige">content</span>=<span class="green">"#{data[0]}"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:description"</span> <span class="beige">content</span>=<span class="green">"#{data[2]}"</span> <span class="blue">/&gt;</span><br/>
+            pre <span class="blue">&lt;meta</span> <span class="beige">name</span>=<span class="green">"twitter:image"</span> <span class="beige">content</span>=<span class="green">"#{data[4]}"</span> <span class="blue">/&gt;</span><br/>
+    div#metatag-wrapper
+        h1 Metatag Generator
+        h4 What does this Service Do?
+        ul
+            li Generates common meta data for you website
+            li Results are based on your input
+            li Facebook Open Graph and Twitter Card tags will be generated for you
+            li We will produce a typical Facebook card for a website
+            li We will produce a Summary Card with Large Image for Twitter
+            li Other useful tags will be generated as well
+            li Just fill out the fields, hit the button, then copy and paste to your project
+            li Now when you or others share a link to your website, other users will see an image and other information
+            li Services like Slack also use this meta-data and your link will 'unfurl' beautifully there as well
+        ul#my-accordion.accordion(data-accordion, data-allow-all-closed='true', data-slide-speed=500)
+            li.accordion-item(data-accordion-item)
+                a.accordion-title(href='#tab-1') 
+                    i.fa.fa-facebook-official.fa-2x
+                    span &nbsp; Best Practices for Facebook Meta Content
+                div#tab-1.accordion-content(data-tab-content)
+                    h4 Straight From <a href='#' target='_blank'>Facebook Developers</a>
+                    dl
+                        dt Title
+                        dd A clear title without branding or mentioning the domain itself.
+                        dt Url
+                        dd A URL with no session id or extraneous parameters. All shares on Facebook will use this as the identifying URL for this article.
+                        dt Description
+                        dd A clear description, at least two sentences long.
+                        dt Images
+                        dd Use images that are at least 1200 x 630 pixels for the best display on high resolution devices. At the minimum, you should use images that are 600 x 315 pixels to display link page posts with larger images. Images can be up to 8MB in size.
+                        dt Type
+                        dd While there are many Type Options.  We will default to Website.  Find out more by navigating to the link above.
+            li.accordion-item(data-accordion-item)
+                a.accordion-title(href='#tab-2')
+                    i.fa.fa-twitter-square.fa-2x
+                    span &nbsp; Best Practices for Twitter Meta Content
+                div#tab-2.accordion-content(data-tab-content)
+                    h4 Straight From Twitter Developers
+                    dl
+                        dt Type
+                        dd As mentioned above, we will be creating a Summary Card with Large Image.  There are more types, visit above link for more information.
+                        dt Creator
+                        dd The Twitter @username who created the content.
+                        dt Title
+                        dd A concise title for the related content.
+                        dt Description
+                        dd A description that concisely summarizes the content as appropriate for presentation within a Tweet.  Don't reuse Title.  Won't display on Android/iOS
+                        dt Image
+                        dd Must be less than 5MB.  Minimum dimensions of 300x157 or maximum of 4096x4096 pixels.  JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported.
+        if images
+            form(action='/api/metatags', method='POST')
+                label(for='meta-title') Enter Your Website's Title
+                    input#meta-title(type='text', name='meta-title', placeholder="Benjaminadk's Meta Tag Microservice")
+                label(for='meta-url') Enter Your Website's Url
+                    input#meta-url(type='url', name='meta-url', placeholder='https://playingaround-benjaminadk.c9users.io/metatag')
+                label(for='meta-description') Enter A Description of Your Website
+                    input#meta-description(type='text', name='meta-description', placeholder='A Microservice that generates common metatags, including Facebook and Twitter meta-data, for your website.  Save yourself some time and effort, use me!')
+                label(for='meta-twitter-handle') Enter Your Twitter Handle
+                    input#meta-twitter-handle(type='text', name='meta-twitter-handle', placeholder='@BenjaminBrooke3')
+                label(for='meta-pic') Image to show on Facebook and Twitter
+                    select#meta-pic(name='meta-pic')
+                        each image in images
+                         option(value= image.url)= image.url.slice(47)
+                input.button(type='submit', value='Submit')
+            
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/js/foundation.min.js")
+    script.
+        $(document).foundation();
+    

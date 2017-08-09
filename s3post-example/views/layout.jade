@@ -5,14 +5,19 @@ html
     link(rel='stylesheet', href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src="https://use.fontawesome.com/e5ddde80f9.js")
+    script(type='text/javascript').
+      function createKeenWebAutoCollector(){window.keenWebAutoCollector=window.KeenWebAutoCollector.create({projectId:'5986bef6c9e77c0001f70869',writeKey:'49A2646246A95A3A6E6A965A1839B51AEE3B349820611CF77893006EFAD707C19D17CFD4BC7C542638CD43D232B3905B0A448CCE0E5009601F7957AAF3C4A25F528A02E142E27BD4EA72AC78E42A0D436BD9037D56C26A209981CD49604862E4',onloadCallbacks:window.keenWebAutoCollector.onloadCallbacks}),window.keenWebAutoCollector.loaded()}function initKeenWebAutoCollector(){window.keenWebAutoCollector.domReady()?window.createKeenWebAutoCollector():document.addEventListener("readystatechange",function(){window.keenWebAutoCollector.domReady()&&window.createKeenWebAutoCollector()})}window.keenWebAutoCollector={onloadCallbacks:[],onload:function(a){this.onloadCallbacks.push(a)},domReady:function(){return["ready","complete"].indexOf(document.readyState)>-1}};
+    script(async='', type='text/javascript', src='https://d26b395fwzu5fz.cloudfront.net/keen-web-autocollector-1.0.8.min.js', onload='initKeenWebAutoCollector()')
+
     meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
   body
     header
       include _navigation
     main
       block content
-      
+
     script.
+      
       var pic = JSON.parse(localStorage.getItem("Uploader"));
       
             var url = pic.profilePic;

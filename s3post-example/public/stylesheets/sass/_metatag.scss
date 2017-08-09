@@ -1,0 +1,28 @@
+#meta-results-wrapper {
+    pre {
+        background: lighten($black,12%);
+        color: $white;
+        padding: 1px 5px;
+    }
+    .blue {
+        color: $blue;
+    }
+    .green {
+        color: $green;
+    }
+    .beige {
+        color: $beige;
+    }
+}
+#metatag-wrapper {
+    .accordion-title {
+        background: $black;
+        color: #white;
+    }
+  
+}
+
+#my-accordion {
+  
+   
+}

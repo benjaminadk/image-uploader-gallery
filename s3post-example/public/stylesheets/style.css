@@ -76,6 +76,24 @@ a:hover {
 #profile-pic {
   width: 50vw; }
 
+#meta-results-wrapper pre {
+  background: #1f1f1f;
+  color: #f7f7f7;
+  padding: 1px 5px; }
+
+#meta-results-wrapper .blue {
+  color: #449cf4; }
+
+#meta-results-wrapper .green {
+  color: #478841; }
+
+#meta-results-wrapper .beige {
+  color: #b7b045; }
+
+#metatag-wrapper .accordion-title {
+  background: #000;
+  color: #white; }
+
 main {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
